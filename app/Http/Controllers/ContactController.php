@@ -8,6 +8,10 @@ class ContactController extends Controller
 {
     public function index()
     {
-        return view('contact.contact', []);
+        $message = 'Contato';
+
+        return view('contact.contact', [
+            'message' => $message
+        ]);
     }
 }

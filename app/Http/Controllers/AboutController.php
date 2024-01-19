@@ -8,6 +8,10 @@ class AboutController extends Controller
 {
     public function index()
     {
-        return view('about.about', []);
+        $message = 'Sobre Nós';
+
+        return view('about.about', [
+            'message' => $message
+        ]);
     }
 }

@@ -8,10 +8,10 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $mensage = 'fuck it. we ball';
+        $message = 'Home';
 
         return view('home.index', [
-            'mensage' => $mensage
+            'message' => $message
         ]);
     }
 }
