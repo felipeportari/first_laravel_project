@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,10 +18,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/sobre', function () {
-    return view('about');
-});
+Route::get('/sobre', [AboutController::class, 'index']);
 
-Route::get('/contato', function () {
-    return view('contact');
-});
+Route::get('/contato', [ContactController::class, 'index']);
