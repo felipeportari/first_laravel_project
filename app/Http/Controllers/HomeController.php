@@ -10,7 +10,7 @@ class HomeController extends Controller
     {
         $mensage = 'fuck it. we ball';
 
-        return view('home/index', [
+        return view('home.index', [
             'mensage' => $mensage
         ]);
     }
