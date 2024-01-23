@@ -6,3 +6,6 @@
 <a href="{{ route('contact') }}">
     <button>Contato</button>
 </a>
+<a href="{{ route('blog') }}">
+    <button>Blog</button>
+</a>
