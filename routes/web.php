@@ -25,6 +25,4 @@ Route::get('/contato', [ContactController::class, 'index'])->name('contact');
 
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 
-Route::get('/blog/{slug}', function (string $slug) {
-    echo "we are here: " . $slug;
-})->name('blog.see');
+Route::get('/blog/{slug}', [BlogController::class, 'see'])->name('blog.see');

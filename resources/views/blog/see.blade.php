@@ -1,1 +1,1 @@
-<h1>Artigo</h1>
+<h1>{{ $artigo['nome'] }}</h1>
