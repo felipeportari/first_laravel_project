@@ -9,7 +9,24 @@ class BlogController extends Controller
 
     public function index()
     {
-        return view('blog.blog');
+        $artigos = [
+            [
+                'id' => 1,
+                'nome' => 'aderbal junior'
+            ],
+            [
+                'id' => 2,
+                'nome' => 'macarroni'
+            ],
+            [
+                'id' => 3,
+                'nome' => 'test'
+            ]
+        ];
+
+        return view('blog.blog', [
+            'artigos' => $artigos,
+        ]);
     }
 
     public function see(string $slug)
@@ -34,7 +51,7 @@ class BlogController extends Controller
                 return view('blog.see', ['artigo' => $artigo]);
             }
         }
-        if(array_key_exists($slug, $artigos) == false){
+        if (array_key_exists($slug, $artigos) == false) {
             echo "esse artigo não existe";
         }
     }
