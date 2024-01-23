@@ -34,5 +34,8 @@ class BlogController extends Controller
                 return view('blog.see', ['artigo' => $artigo]);
             }
         }
+        if(array_key_exists($slug, $artigos) == false){
+            echo "esse artigo não existe";
+        }
     }
 }
