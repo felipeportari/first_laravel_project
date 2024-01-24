@@ -32,7 +32,9 @@ Route::prefix('/blog')->group(function () {
     Route::get('/{slug}', [BlogController::class, 'see'])->name('blog.see');
 });
 
-Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::get('/clientes', [CustomerController::class, 'index'])->name('customer');
-Route::get('/fornecedores', [SuppliersController::class, 'index'])->name('suppliers');
-Route::get('/produtos', [ProductController::class, 'index'])->name('product');
+Route::prefix('/admin')->group(function (){
+    Route::get('/login', [LoginController::class, 'index'])->name('login');
+    Route::get('/clientes', [CustomerController::class, 'index'])->name('customer');
+    Route::get('/fornecedores', [SuppliersController::class, 'index'])->name('suppliers');
+    Route::get('/produtos', [ProductController::class, 'index'])->name('product');
+});
