@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class BlogController extends Controller
+class ProductController extends Controller
 {
 
     public function index()
     {
-        $artigos = [
+        $products = [
             [
                 'id' => 1,
                 'nome' => 'aderbal junior'
@@ -24,14 +24,14 @@ class BlogController extends Controller
             ]
         ];
 
-        return view('blog.blog', [
-            'artigos' => $artigos,
+        return view('product.product', [
+            'products' => $products,
         ]);
     }
 
     public function see(string $slug)
     {
-        $artigos = [
+        $products = [
             [
                 'id' => 1,
                 'nome' => 'aderbal junior'
@@ -46,13 +46,13 @@ class BlogController extends Controller
             ]
         ];
 
-        foreach ($artigos as $artigo) {
-            if ($artigo['id'] == $slug) {
-                return view('blog.see', ['artigo' => $artigo]);
+        foreach ($products as $product) {
+            if ($product['id'] == $slug) {
+                return view('product.see', ['product' => $product]);
             }
         }
-        if (array_key_exists($slug, $artigos) == false) {
-            echo "esse artigo não existe";
+        if (array_key_exists($slug, $products) == false) {
+            echo "esse produto não existe";
         }
     }
 }

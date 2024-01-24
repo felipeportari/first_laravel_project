@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
-use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -23,6 +23,5 @@ Route::get('/sobre', [AboutController::class, 'index'])->name('about');
 
 Route::get('/contato', [ContactController::class, 'index'])->name('contact');
 
-Route::get('/blog', [BlogController::class, 'index'])->name('blog');
-
-Route::get('/blog/{slug}', [BlogController::class, 'see'])->name('blog.see');
+Route::get('/product', [ProductController::class, 'index'])->name('product');
+Route::get('/product/{slug}', [ProductController::class, 'see'])->name('product.see');
