@@ -27,8 +27,10 @@ Route::get('/sobre', [AboutController::class, 'index'])->name('about');
 
 Route::get('/contato', [ContactController::class, 'index'])->name('contact');
 
-Route::get('/blog', [BlogController::class, 'index'])->name('blog');
-Route::get('/blog/{slug}', [BlogController::class, 'see'])->name('blog.see');
+Route::prefix('/blog')->group(function () {
+    Route::get('/', [BlogController::class, 'index'])->name('blog');
+    Route::get('/{slug}', [BlogController::class, 'see'])->name('blog.see');
+});
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::get('/clientes', [CustomerController::class, 'index'])->name('customer');
