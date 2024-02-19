@@ -1,23 +1,23 @@
 <h1>{{ $message }}</h1>
 
-<a href="{{ route('about') }}">
+<a href="{{ route('site.about') }}">
     <button>Sobre Nós</button>
 </a>
-<a href="{{ route('contact') }}">
+<a href="{{ route('site.contact') }}">
     <button>Contato</button>
 </a>
-<a href="{{ route('blog') }}">
+<a href="{{ route('site.blog') }}">
     <button>Blog</button>
 </a>
-<a href="{{ route('login') }}">
+<a href="{{ route('admin.login') }}">
     <button>Login</button>
 </a>
-<a href="{{ route('product') }}">
+<a href="{{ route('admin.product') }}">
     <button>Produtos</button>
 </a>
-<a href="{{ route('customer') }}">
+<a href="{{ route('admin.customer') }}">
     <button>Cliente</button>
 </a>
-<a href="{{ route('suppliers') }}">
+<a href="{{ route('admin.suppliers') }}">
     <button>Fornecedores</button>
 </a>

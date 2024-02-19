@@ -21,21 +21,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::redirect('/home', '/');
+Route::name('site.')->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::redirect('/home', '/');
 
-Route::get('/sobre', [AboutController::class, 'index'])->name('about');
+    Route::get('/sobre', [AboutController::class, 'index'])->name('about');
 
-Route::get('/contato', [ContactController::class, 'index'])->name('contact');
+    Route::get('/contato', [ContactController::class, 'index'])->name('contact');
 
-Route::prefix('/blog')->group(function () {
-    Route::get('/', [BlogController::class, 'index'])->name('blog');
-    Route::get('/{slug}', [BlogController::class, 'see'])->name('blog.see');
+    Route::prefix('/blog')->group(function () {
+        Route::get('/', [BlogController::class, 'index'])->name('blog');
+        Route::get('/{slug}', [BlogController::class, 'see'])->name('blog.see');
+    });
 });
 
-Route::prefix('/admin')->group(function (){
+Route::prefix('/admin')->name('admin.')->group(function () {
     Route::get('/login', [LoginController::class, 'index'])->name('login');
     Route::get('/clientes', [CustomerController::class, 'index'])->name('customer');
     Route::get('/fornecedores', [SuppliersController::class, 'index'])->name('suppliers');
     Route::get('/produtos', [ProductController::class, 'index'])->name('product');
+});
+
+Route::fallback(function () {
+    echo 'Página não encontrada. <a href="' . route('site.site.home') . '">Clique aqui</a> para voltar à página principal';
 });
