@@ -24,11 +24,9 @@ use Illuminate\Support\Facades\Route;
 Route::name('site.')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::redirect('/home', '/');
-
     Route::get('/sobre', [AboutController::class, 'index'])->name('about');
-
     Route::get('/contato', [ContactController::class, 'index'])->name('contact');
-
+    Route::post('/contato', [ContactController::class, 'index'])->name('contact');
     Route::prefix('/blog')->group(function () {
         Route::get('/', [BlogController::class, 'index'])->name('blog');
         Route::get('/{slug}', [BlogController::class, 'see'])->name('blog.see');
