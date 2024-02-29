@@ -1,5 +1,7 @@
 @extends('components.header')
 
+@section('title', 'Contato')
+
 @section('content')
     <div class="topo">
         <div class="logo">
