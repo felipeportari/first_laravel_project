@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+@extends('components.header')
 
-<head>
-    <title>Super Gestão - Sobre Nós</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="{{ asset("css/app.css") }}">
-</head>
-
-<body>
+@section('content')
     <div class="topo">
-
         <div class="logo">
             <img src="{{ asset('img/logo.png') }}">
         </div>
@@ -53,6 +45,4 @@
             <img src="{{ asset('img/mapa.png') }}">
         </div>
     </div>
-</body>
-
-</html>
+@endsection
